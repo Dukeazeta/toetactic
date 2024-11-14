@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="light-theme">
+    <div class="game-container">
+        <header>
+            <h1>Tic Tac Toe</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle" aria-label="Toggle theme">
+                    <span class="theme-icon">🌞</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="game-settings">
+            <div class="mode-selection">
+                <button class="active" data-mode="two-player">Two Player</button>
+                <button data-mode="single-player">vs AI</button>
+            </div>
+            
+            <div class="difficulty-selection" style="display: none;">
+                <button data-difficulty="easy">Easy</button>
+                <button data-difficulty="medium">Medium</button>
+                <button data-difficulty="hard">Hard</button>
+            </div>
+
+            <div class="symbol-selection">
+                <p>Play as:</p>
+                <div class="symbol-buttons">
+                    <button class="active" data-symbol="X">X</button>
+                    <button data-symbol="O">O</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-status">
+            <p class="turn-indicator">Player X's Turn</p>
+            <div class="score-board">
+                <span class="score-x">X: 0</span>
+                <span class="score-draws">Draws: 0</span>
+                <span class="score-o">O: 0</span>
+            </div>
+        </div>
+
+        <div class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <div class="game-controls">
+            <button id="undoButton" class="control-btn">Undo</button>
+            <button id="resetButton" class="control-btn">Reset Game</button>
+        </div>
+    </div>
+
+    <audio id="moveSound" src="sounds/move.mp3" preload="auto"></audio>
+    <audio id="winSound" src="sounds/win.mp3" preload="auto"></audio>
+    <audio id="drawSound" src="sounds/draw.mp3" preload="auto"></audio>
+
+    <script src="game.js"></script>
+    <script src="ai.js"></script>
+</body>
+</html>
